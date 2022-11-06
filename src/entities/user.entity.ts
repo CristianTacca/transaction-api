@@ -6,10 +6,10 @@ export class User {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: false})
+  @Column({ nullable: false })
   name: string;
 
-  @Column({nullable:false, type: "numeric"})
+  @Column({ nullable: false, type: "numeric" })
   balance: number;
 
   @OneToMany(() => Transaction, (transaction) => transaction.user)
