@@ -1,16 +1,27 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToOne,
+  JoinColumn,
+} from "typeorm";
+import { User } from "./user.entity";
 
 @Entity()
 export class Transaction {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  value: bigint;
+  @Column({ nullable: false, type: "numeric" })
+  value: number;
 
-  @Column()
+  @Column({ nullable: false })
   type: string;
 
   @Column({ nullable: true })
-  description: string;
+  description?: string;
+
+  @OneToOne(() => User, { eager: true, cascade: true })
+  @JoinColumn()
+  user: User;
 }
