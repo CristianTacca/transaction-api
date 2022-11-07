@@ -11,4 +11,5 @@ transactionRouter.post(
   TransactionController.insertion
 );
 
+transactionRouter.patch("/update", TransactionController.update);
 export default transactionRouter;

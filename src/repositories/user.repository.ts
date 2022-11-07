@@ -15,7 +15,6 @@ class UserRepository implements IUserRepo {
   }
 
   save = async (user: User) => this.repo.save(user);
-
   findOne = async (payload: object) => {
     return this.repo.findOneBy({ ...payload });
   };

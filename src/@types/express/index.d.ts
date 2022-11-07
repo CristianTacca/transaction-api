@@ -8,6 +8,7 @@ declare global {
       decoded: Partial<User>;
       validated: Partial<User>;
       values: Transaction;
+      id: number;
     }
   }
 }

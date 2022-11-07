@@ -14,6 +14,20 @@ class TransactionController {
       }
     }
   };
+
+  static update = async (req: Request, res: Response) => {
+    try {
+      const updatedTransaction = await TransactionService.updateTransacion(req);
+
+      if (updatedTransaction) {
+        return res.status(201).json("Your transaction has been canceled!");
+      }
+    } catch (error) {
+      if (error instanceof AppError) {
+        handleError(error, res);
+      }
+    }
+  };
 }
 
 export default TransactionController;
