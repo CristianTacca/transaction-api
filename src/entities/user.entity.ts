@@ -1,5 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 import { Transaction } from "./transaction.entity";
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from "typeorm";
 
 @Entity()
 export class User {
@@ -9,7 +9,7 @@ export class User {
   @Column({ nullable: false })
   name: string;
 
-  @Column({ nullable: false, type: "numeric" })
+  @Column()
   balance: number;
 
   @OneToMany(() => Transaction, (transaction) => transaction.user)

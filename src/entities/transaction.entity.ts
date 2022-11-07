@@ -2,8 +2,8 @@ import {
   Entity,
   Column,
   PrimaryGeneratedColumn,
-  OneToOne,
   JoinColumn,
+  ManyToOne,
 } from "typeorm";
 import { User } from "./user.entity";
 
@@ -12,7 +12,7 @@ export class Transaction {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({ nullable: false, type: "numeric" })
+  @Column()
   value: number;
 
   @Column({ nullable: false })
@@ -21,7 +21,7 @@ export class Transaction {
   @Column({ nullable: true })
   description?: string;
 
-  @OneToOne(() => User, { eager: true, cascade: true })
+  @ManyToOne(() => User, { eager: true, cascade: true })
   @JoinColumn()
   user: User;
 }
