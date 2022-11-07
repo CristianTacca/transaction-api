@@ -30,6 +30,32 @@ class TransactionService {
 
     return transaction;
   };
+
+  static updateTransacion = async (req: Request) => {
+    const { id } = req.body;
+
+    const transaction = await transactionRepository.findOne({ id: id });
+
+    if (!transaction) {
+      throw new AppError(401, "Transaction does not exists.");
+    }
+
+    const user = await userRepository.findOne({ id: transaction.user.id });
+
+    if (!user) {
+      throw new AppError(401, "User does not exist.");
+    }
+
+    if (transaction.type === "deposit") {
+      user.balance -= Number(transaction.value.toFixed(2));
+    } else if (transaction.type === "withdrawn") {
+      user.balance += Number(transaction.value.toFixed(2));
+    }
+
+    await userRepository.save(user);
+
+    return true;
+  };
 }
 
 export default TransactionService;
