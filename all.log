@@ -1,0 +1,54 @@
+2022-11-08 19:16:31:1631 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:16:36:1636 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:16:51:1651 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:19:35:1935 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:19:47:1947 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:19:53:1953 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:20:00:200 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:20:12:2012 [35mhttp[39m: [35m{[39m
+[35m  value: 150,[39m
+[35m  type: 'deposit',[39m
+[35m  description: 'rent',[39m
+[35m  user: User { id: 3, name: 'Amelia', balance: 3040 },[39m
+[35m  id: 142[39m
+[35m}[39m
+2022-11-08 19:20:47:2047 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:20:53:2053 [35mhttp[39m: [35m{[39m
+[35m  value: 150,[39m
+[35m  type: 'deposit',[39m
+[35m  description: 'rent',[39m
+[35m  user: User { id: 3, name: 'Amelia', balance: 3190 },[39m
+[35m  id: 143[39m
+[35m}[39m
+2022-11-08 19:21:10:2110 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:21:24:2124 [35mhttp[39m: [35m{[39m
+[35m  value: 150,[39m
+[35m  type: 'deposit',[39m
+[35m  description: 'rent',[39m
+[35m  user: User { id: 3, name: 'Amelia', balance: 3340 },[39m
+[35m  id: 144[39m
+[35m}[39m
+2022-11-08 19:22:13:2213 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:22:17:2217 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:22:25:2225 [37mdebug[39m: [37mData Source initialized[39m
+2022-11-08 19:22:27:2227 [35mhttp[39m: [35m{[39m
+[35m  value: 150,[39m
+[35m  type: 'deposit',[39m
+[35m  description: 'rent',[39m
+[35m  user: User { id: 3, name: 'Amelia', balance: 3490 },[39m
+[35m  id: 145[39m
+[35m}[39m
+2022-11-08 19:26:42:2642 [32minfo[39m: [32m{[39m
+[32m  value: 150,[39m
+[32m  type: 'deposit',[39m
+[32m  description: 'rent',[39m
+[32m  user: User { id: 3, name: 'Amelia', balance: 3790 },[39m
+[32m  id: 147[39m
+[32m}[39m
+2022-11-08 19:29:23:2923 [32minfo[39m: [32m{[39m
+[32m  value: 150,[39m
+[32m  type: 'deposit',[39m
+[32m  description: 'rent',[39m
+[32m  user: User { id: 3, name: 'Amelia', balance: 3940 },[39m
+[32m  id: 148[39m
+[32m}[39m

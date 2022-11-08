@@ -56,8 +56,10 @@ class TransactionService {
 
     if (transaction.type === "deposit") {
       user.balance -= Number(transaction.value.toFixed(2));
+      transaction.type = "withdrawn";
     } else if (transaction.type === "withdrawn") {
       user.balance += Number(transaction.value.toFixed(2));
+      transaction.type = "deposit";
     }
 
     await userRepository.save(user);
@@ -69,7 +71,7 @@ class TransactionService {
     await client.set(userId, userBalance, { EX: 1800, NX: true });
     await client.disconnect();
 
-    return true;
+    return transaction;
   };
 
   static deleteTransaction = async (req: Request) => {
@@ -103,7 +105,7 @@ class TransactionService {
     await client.set(userId, userBalance, { EX: 1800, NX: true });
     await client.disconnect();
 
-    return true;
+    return transaction;
   };
 }
 
