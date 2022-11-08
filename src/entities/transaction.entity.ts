@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { User } from "./user.entity";
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from "typeorm";
 
 @Entity()
 export class Transaction {
@@ -6,11 +7,14 @@ export class Transaction {
   id: number;
 
   @Column()
-  value: bigint;
+  value: number;
 
-  @Column()
+  @Column({ nullable: false })
   type: string;
 
   @Column({ nullable: true })
-  description: string;
+  description?: string;
+
+  @ManyToOne(() => User, { eager: true, cascade: true })
+  user: User;
 }
