@@ -10,6 +10,7 @@ transactionRouter.post(
   validateSchema(createTransactionSchema),
   TransactionController.insertion
 );
-
 transactionRouter.patch("/update", TransactionController.update);
+transactionRouter.delete("/delete", TransactionController.delete);
+
 export default transactionRouter;

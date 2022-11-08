@@ -28,6 +28,22 @@ class TransactionController {
       }
     }
   };
+
+  static delete = async (req: Request, res: Response) => {
+    try {
+      const deletedTransaction = await TransactionService.deleteTransaction(
+        req
+      );
+
+      if (deletedTransaction) {
+        return res.status(201).json("Your transaction has been deleted!");
+      }
+    } catch (error) {
+      if (error instanceof AppError) {
+        handleError(error, res);
+      }
+    }
+  };
 }
 
 export default TransactionController;
