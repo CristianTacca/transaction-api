@@ -1,5 +1,6 @@
 import { Request } from "express";
 import { AppError } from "../errors/appError";
+import { client } from "../redis/index";
 import userRepository from "../repositories/user.repository";
 import transactionRepository from "../repositories/transaction.repository";
 
@@ -28,6 +29,13 @@ class TransactionService {
     const transaction = await transactionRepository.save(values);
     await userRepository.save(user);
 
+    const userId = user.id.toString();
+    const userBalance = user.balance.toString();
+
+    await client.connect();
+    await client.set(userId, userBalance, { EX: 1800, NX: true });
+    await client.disconnect();
+
     return transaction;
   };
 
@@ -53,6 +61,13 @@ class TransactionService {
     }
 
     await userRepository.save(user);
+
+    const userId = user.id.toString();
+    const userBalance = user.balance.toString();
+
+    await client.connect();
+    await client.set(userId, userBalance, { EX: 1800, NX: true });
+    await client.disconnect();
 
     return true;
   };
@@ -80,6 +95,13 @@ class TransactionService {
 
     await userRepository.save(user);
     await transactionRepository.delete(transaction.id);
+
+    const userId = user.id.toString();
+    const userBalance = user.balance.toString();
+
+    await client.connect();
+    await client.set(userId, userBalance, { EX: 1800, NX: true });
+    await client.disconnect();
 
     return true;
   };
